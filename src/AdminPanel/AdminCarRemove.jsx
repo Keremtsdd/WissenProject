@@ -54,7 +54,7 @@ const AdminCarRemove = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="p-4">
+                <div className="p-4 ml-20 mt-10">
                     <h1 className="text-2xl font-bold mb-4 "> Araç Sil</h1>
                     <input type="text" placeholder="Araç ID girin" value={carId} onChange={(e) => setCarId(e.target.value)} className="p-2  rounded mb-2 border-2 border-black" />
                     <button onClick={handleDelete} className="bg-red-500 text-white px-4 py-2 ml-2 rounded hover:bg-red-900 duration-300 transition" > Sil </button>

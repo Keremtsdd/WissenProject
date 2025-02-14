@@ -78,7 +78,7 @@ function AdminCarAdd() {
                                 />
                                 <input
                                     type="text"
-                                    placeholder="Araç Modeli (örnk:2018)"
+                                    placeholder="Araç Yılı"
                                     value={carAge}
                                     onChange={(e) => setCarAge(e.target.value)}
                                     required
