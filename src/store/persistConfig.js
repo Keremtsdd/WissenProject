@@ -1,4 +1,4 @@
-import storage from 'redux-persist/lib/storage';  // localStorage kullanılıyor
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
     key: 'root',

@@ -11,20 +11,15 @@ import About from './pages/About';
 import Error from './pages/Error';
 import RentalCondition from './pages/RentalCondition';
 import Confirmation from './pages/Confirmation';
-import AdminHome from './AdminPanel/AdminHome';
 import AdminLogin from './AdminPanel/AdminLogin';
-import AdminHeader from "./components/AdminHeader";
-import AdminCarUpdate from './AdminPanel/AdminCarUpdate';
-import AdminUsers from './AdminPanel/AdminUsers';
-import AdminSettings from './AdminPanel/AdminSettings';
 import AdminDashboard from './AdminPanel/AdminDashboard';
 import AdminCarRemove from './AdminPanel/AdminCarRemove';
 import AdminCarAdd from './AdminPanel/AdminCarAdd';
-
+import PrivateRoute from './components/PrivateRoute';
 
 const Layout = ({ children }) => {
   const location = useLocation();
-  const isAdminPage = location.pathname.startsWith("/admin");
+  const isAdminPage = location.pathname.startsWith("/admin") && location.pathname !== "/adminlogin";
 
   return (
     <>
@@ -32,21 +27,15 @@ const Layout = ({ children }) => {
         <main>{children}</main>
       ) : (
         <>
-          {isAdminPage && (
-            <>
-              <AdminHeader />
-              <AdminHome />
-            </>
-          )}
+
           {!isAdminPage && <Header />}
           <main>{children}</main>
           {!isAdminPage && <Footer />}
         </>
       )}
     </>
-  )
+  );
 }
-
 
 function App() {
   return (
@@ -61,19 +50,16 @@ function App() {
             <Route path="/rentalcondition" element={<RentalCondition />} />
             <Route path="/confirmation" element={<Confirmation />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
-            <Route path="/adminhome" element={<AdminHome />} />
-            <Route path="/admindashboard" element={<AdminDashboard />} />
-            <Route path="/admincaradd" element={<AdminCarAdd />} />
-            <Route path="/admincarremove" element={<AdminCarRemove />} />
-            <Route path="/admincarupdate" element={<AdminCarUpdate />} />
-            <Route path="/adminusers" element={<AdminUsers />} />
-            <Route path="/adminsettings" element={<AdminSettings />} />
+            <Route path="/admindashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
+            <Route path="/admincaradd" element={<PrivateRoute><AdminCarAdd /></PrivateRoute>} />
+            <Route path="/admincarremove" element={<PrivateRoute><AdminCarRemove /></PrivateRoute>} />
             <Route path="*" element={<Error />} />
           </Routes>
         </Layout>
       </BrowserRouter>
     </Provider>
-  )
+  );
 }
 
 export default App;
+

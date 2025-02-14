@@ -2,15 +2,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    reservations: [],  // Rezervasyonlar burada tutulacak
+    reservations: [],
 };
 
 const reservationSlice = createSlice({
     name: 'reservation',
     initialState,
     reducers: {
+
         addReservation: (state, action) => {
-            // 'action.payload' kullanarak yeni rezervasyonu ekleyin
             state.reservations.push(action.payload);
         },
         removeReservation: (state, action) => {

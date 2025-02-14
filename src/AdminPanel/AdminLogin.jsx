@@ -13,22 +13,21 @@ function AdminLogin() {
     const navigate = useNavigate()
 
 
-    const hanleLogin = async () => {
+    const handleLogin = async () => {
         try {
             const response = await axios.post('http://localhost:5115/api/Admin/login', {
                 username: username,
                 password: password
-            })
+            });
 
-            const token = response.data
-            localStorage.setItem('jwtToken', token)
+            const token = response.data;
+            localStorage.setItem('jwtToken', token);
 
-            navigate("/admindashboard")
-
+            navigate("/admindashboard");
         } catch (error) {
-            setError("Hatalı Kullanıcı Adı veya Şifre !")
+            setError("Hatalı Kullanıcı Adı veya Şifre !");
         }
-    }
+    };
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-300">
@@ -58,10 +57,9 @@ function AdminLogin() {
 
                 {error && <p className='text-red-600 mt-2 ml-14'>{error}</p>}
 
-                <button onClick={hanleLogin} className='h-9 w-32 mt-7 ml-24 text-xl bg-green-600 hover:bg-green-900 duration-300 text-white rounded-sm'>Giriş</button>
+                <button onClick={handleLogin} className='h-9 w-32 mt-7 ml-24 text-xl bg-green-600 hover:bg-green-900 duration-300 text-white rounded-sm'>Giriş</button>
             </div>
         </div>
-
     )
 }
 
