@@ -199,13 +199,16 @@ function Detail() {
                             <div className="flex flex-col">
                                 <label className="font-semibold">Telefon</label>
                                 <input
-                                    type="number"
+                                    type="text"
                                     name="telefon"
                                     value={formData.telefon}
                                     onChange={handleChange}
-                                    placeholder=' Örnek: +90 544 123 01 02'
+                                    placeholder="Örnek: +90 544 123 01 02"
                                     className="h-10 w-80 mb-3 mr-7 border-2 border-black rounded-sm"
                                     required
+                                    minLength={10}
+                                    maxLength={11}
+                                    pattern="^\+?[0-9]{10,11}$"
                                 />
                             </div>
 

@@ -5,7 +5,6 @@ const PrivateRoute = ({ children }) => {
     const token = localStorage.getItem('jwtToken');
 
     if (!token) {
-
         return <Navigate to="/adminlogin" />;
     }
 
@@ -13,6 +12,3 @@ const PrivateRoute = ({ children }) => {
 };
 
 export default PrivateRoute;
-
-
-
