@@ -41,7 +41,7 @@ function Favorite() {
                 </div>
             )}
 
-            <div className="flex flex-wrap justify-center gap-10 p-8 pb-36">
+            <div className="flex flex-wrap justify-center gap-10 p-8 pb-36 mt-16">
 
                 {favoriteArray.map((RentaCar) => (
 
@@ -55,8 +55,7 @@ function Favorite() {
                             <img src={RentaCar.carImage} alt={RentaCar.carName} className='h-full object-contain select-none' />
                         </div>
 
-                        <div className='grid grid-cols-2 gap-4 text-center'>
-
+                        <div className='grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center'>
                             <div className='flex flex-col items-center'>
                                 <LocalGasStationIcon fontSize='large' />
                                 <span className='text-xl font-mono select-none'>{RentaCar.carFeul}</span>
@@ -77,11 +76,13 @@ function Favorite() {
                                 <span className='font-mono text-xl select-none'>{RentaCar.carCapacity}</span>
                             </div>
 
-                            <div>
-                                <button onClick={() => handleRemoveFavorite(RentaCar.carId)} className='h-8 w-80 bg-red-500 text-white font-bold rounded-sm ml-3 mt-1 hover:bg-red-950 duration-500 select-none '>Favorilerimden Sil</button>
+                            <div className='col-span-2 sm:col-span-1 md:col-span-3 lg:col-span-4'>
+                                <button onClick={() => handleRemoveFavorite(RentaCar.carId)} className='h-8 w-full sm:w-64 bg-red-500 text-white font-bold rounded-sm mt-2 hover:bg-red-950 duration-500 select-none'>
+                                    Favorilerimden Sil
+                                </button>
                             </div>
-
                         </div>
+
 
                     </div>
                 ))}

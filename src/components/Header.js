@@ -17,6 +17,7 @@ import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import InfoIcon from '@mui/icons-material/Info';
 import HvacIcon from '@mui/icons-material/Hvac';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 
 export default function Header() {
 
@@ -65,6 +66,7 @@ export default function Header() {
             <MenuItem onClick={() => navigate("/favorite")}><ShoppingCartCheckoutIcon className='mr-2' /> Favorilerim</MenuItem>
             <MenuItem onClick={() => navigate("/about")}><InfoIcon className='mr-2' /> Hakkımızda</MenuItem>
             <MenuItem onClick={() => navigate("/rentalcondition")}><HvacIcon className='mr-2' /> Kiralama Koşulları</MenuItem>
+            <MenuItem onClick={() => navigate("/adminlogin")}><AccountBoxIcon className='mr-2' /> Admin Girişi*</MenuItem>
         </Menu>
     );
 
@@ -130,6 +132,18 @@ export default function Header() {
                     </Badge>
                 </IconButton>
                 <h1 onClick={() => navigate("/rentalcondition")}>Kiralama Koşulları</h1>
+            </MenuItem>
+            <MenuItem>
+                <IconButton
+                    size="large"
+                    color="inherit"
+                    onClick={() => navigate("/rentalcondition")}
+                >
+                    <Badge>
+                        <AccountBoxIcon />
+                    </Badge>
+                </IconButton>
+                <h1 onClick={() => navigate("/adminlogin")}>Admin Girişi*</h1>
             </MenuItem>
         </Menu>
     );

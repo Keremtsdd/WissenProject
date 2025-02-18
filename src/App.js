@@ -58,7 +58,7 @@ function App() {
         </Layout>
       </BrowserRouter>
     </Provider>
-  );
+  )
 }
 
 export default App;

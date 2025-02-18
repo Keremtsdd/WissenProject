@@ -99,7 +99,11 @@ function Detail() {
             </div>
 
             <div className='mt-6 flex justify-center'>
-                <img className='h-72 object-cover rounded-lg shadow-lg' src={RentaCar.carImage} alt={RentaCar.carName} />
+                <img
+                    className='h-48 sm:h-72 object-cover rounded-lg shadow-lg'
+                    src={RentaCar.carImage}
+                    alt={RentaCar.carName}
+                />
             </div>
 
             <div className='mt-6 space-y-4'>
@@ -203,7 +207,7 @@ function Detail() {
                                     name="telefon"
                                     value={formData.telefon}
                                     onChange={handleChange}
-                                    placeholder="Örnek: +90 544 123 01 02"
+                                    placeholder=" Örnek: +90 544 123 01 02"
                                     className="h-10 w-full sm:w-80 mb-3 mr-7 border-2 border-black rounded-sm"
                                     required
                                     minLength={10}
