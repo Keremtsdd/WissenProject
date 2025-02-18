@@ -7,10 +7,7 @@ import Typography from '@mui/material/Typography';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFilledOutlined';
@@ -18,6 +15,9 @@ import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import InfoIcon from '@mui/icons-material/Info';
+import HvacIcon from '@mui/icons-material/Hvac';
 
 export default function Header() {
 
@@ -62,10 +62,10 @@ export default function Header() {
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={() => navigate("/")}><KeyboardArrowRightIcon /> AnaSayfa</MenuItem>
-            <MenuItem onClick={() => navigate("/favorite")}><KeyboardArrowRightIcon /> Favorilerim</MenuItem>
-            <MenuItem onClick={() => navigate("/about")}><KeyboardArrowRightIcon /> Hakkımızda</MenuItem>
-            <MenuItem onClick={() => navigate("/rentalcondition")}><KeyboardArrowRightIcon /> Kiralama Koşulları</MenuItem>
+            <MenuItem onClick={() => navigate("/")}><DirectionsCarIcon className='mr-2' /> Anasayfa</MenuItem>
+            <MenuItem onClick={() => navigate("/favorite")}><ShoppingCartCheckoutIcon className='mr-2' /> Favorilerim</MenuItem>
+            <MenuItem onClick={() => navigate("/about")}><InfoIcon className='mr-2' /> Hakkımızda</MenuItem>
+            <MenuItem onClick={() => navigate("/rentalcondition")}><HvacIcon className='mr-2' /> Kiralama Koşulları</MenuItem>
         </Menu>
     );
 
@@ -87,37 +87,50 @@ export default function Header() {
             onClose={handleMobileMenuClose}
         >
             <MenuItem>
-                <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="error">
-                        <MailIcon />
+                <IconButton size="large" aria-label="show 5 new mails" color="inherit"
+                    onClick={() => navigate("/")}
+                >
+                    <Badge>
+                        <DirectionsCarIcon />
                     </Badge>
                 </IconButton>
-                <p>Messages</p>
+                <h1 onClick={() => navigate("/")}>Anasayfa</h1>
             </MenuItem>
             <MenuItem>
                 <IconButton
                     size="large"
-                    aria-label="show 17 new notifications"
                     color="inherit"
                     onClick={() => navigate("/favorite")}
                 >
                     <Badge badgeContent={number} color="error">
-                        <BookmarkBorderIcon />
+                        <ShoppingCartCheckoutIcon />
                     </Badge>
                 </IconButton>
-                <p>Notifications</p>
+                <h1 onClick={() => navigate("/favorite")}>Favorilerim</h1>
             </MenuItem>
-            <MenuItem onClick={handleProfileMenuOpen}>
+            <MenuItem>
                 <IconButton
                     size="large"
-                    aria-label="account of current user"
-                    aria-controls="primary-search-account-menu"
-                    aria-haspopup="true"
                     color="inherit"
+                    onClick={() => navigate("/about")}
                 >
-                    <AccountCircle />
+                    <Badge>
+                        <InfoIcon />
+                    </Badge>
                 </IconButton>
-                <p onClick={() => navigate("/")}>Profile</p>
+                <h1 onClick={() => navigate("/about")}>Hakkımızda</h1>
+            </MenuItem>
+            <MenuItem>
+                <IconButton
+                    size="large"
+                    color="inherit"
+                    onClick={() => navigate("/rentalcondition")}
+                >
+                    <Badge>
+                        <HvacIcon />
+                    </Badge>
+                </IconButton>
+                <h1 onClick={() => navigate("/rentalcondition")}>Kiralama Koşulları</h1>
             </MenuItem>
         </Menu>
     );
