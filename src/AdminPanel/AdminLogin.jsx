@@ -21,11 +21,10 @@ function AdminLogin() {
         setError('');
 
         try {
-            const response = await axios.post('http://localhost:5115/api/Admin/login', {
+            const response = await axios.post('http://wissenrentacarapi.runasp.net/api/Admin/login', {
                 username,
                 password
             });
-
             const token = response.data;
             localStorage.setItem('jwtToken', token);
 

@@ -28,7 +28,7 @@ function AdminCarAdd() {
         };
 
         try {
-            const response = await axios.post('http://localhost:5115/api/RentaCar', carData);
+            const response = await axios.post('http://wissenrentacarapi.runasp.net/api/RentaCar', carData);
             console.log('Car added successfully:', response.data);
             alert('Araç başarıyla eklendi!');
         } catch (error) {

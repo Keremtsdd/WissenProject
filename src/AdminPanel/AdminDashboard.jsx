@@ -9,7 +9,7 @@ function AdminDashboard() {
     const [otoCars, setOtoCars] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:5115/api/RentaCar')
+        fetch('http://wissenrentacarapi.runasp.net/api/RentaCar')
             .then(response => response.json())
             .then(data => {
                 setTotalCars(data.length);
@@ -53,4 +53,4 @@ function AdminDashboard() {
     );
 }
 
-export default AdminDashboard;
+export default AdminDashboard

@@ -14,7 +14,6 @@ import DirectionsCarFilledOutlinedIcon from '@mui/icons-material/DirectionsCarFi
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import InfoIcon from '@mui/icons-material/Info';
 import HvacIcon from '@mui/icons-material/Hvac';

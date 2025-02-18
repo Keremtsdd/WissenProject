@@ -12,7 +12,7 @@ function GetData() {
 
     const getDataAxios = async () => {
         try {
-            let response = await axios.get("http://localhost:5115/api/RentaCar")
+            let response = await axios.get("http://wissenrentacarapi.runasp.net/api/RentaCar")
             console.log(response.data)
             setData(response.data)
         } catch (error) {

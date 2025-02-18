@@ -14,7 +14,7 @@ const AdminCarRemove = () => {
 
         if (window.confirm('Bu aracı silmek istediğinize emin misiniz?')) {
             try {
-                const response = await fetch(`http://localhost:5115/api/RentaCar/delete/${carId}`, {
+                const response = await fetch(`http://wissenrentacarapi.runasp.net/api/RentaCar/delete/${carId}`, {
                     method: 'DELETE',
                 });
 

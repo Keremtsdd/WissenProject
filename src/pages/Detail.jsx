@@ -8,7 +8,6 @@ import StarIcon from '@mui/icons-material/Star'
 import ContactEmergencyOutlinedIcon from '@mui/icons-material/ContactEmergencyOutlined';
 
 function Detail() {
-
     const { state } = useLocation()
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -30,7 +29,7 @@ function Detail() {
 
     const getCarById = useCallback(async () => {
         try {
-            let response = await axios.get(`http://localhost:5115/api/RentaCar/${state.id}`)
+            let response = await axios.get(`http://wissenrentacarapi.runasp.net/api/RentaCar/${state.id}`)
             setRentacar(response.data)
             checkIfFavorite(response.data)
         } catch (error) {
@@ -60,7 +59,7 @@ function Detail() {
 
     const handleChange = (e) => {
         setFormData({
-            formData,
+            ...formData,
             [e.target.name]: e.target.value
         })
     }
@@ -84,7 +83,6 @@ function Detail() {
             navigate("/confirmation")
         }
     }
-
 
     return (
         <div className='max-w-4xl mx-auto mt-20 border-t-2 border-gray-200 p-6 bg-white shadow-lg rounded-lg mb-32'>
@@ -127,7 +125,7 @@ function Detail() {
             </div>
 
             <div className='mt-6 text-center mb-10'>
-                <button onClick={() => setReservationVisible(!isReservationVisible)} className='px-4 py-2  text-white bg-green-700 font-bold hover:bg-green-950  rounded-lg  transition-all duration-500 select-none'>
+                <button onClick={() => setReservationVisible(!isReservationVisible)} className='px-4 py-2 text-white bg-green-700 font-bold hover:bg-green-950 rounded-lg transition-all duration-500 select-none'>
                     Rezervasyon Yap
                 </button>
             </div>
@@ -135,9 +133,11 @@ function Detail() {
             <form onSubmit={handleSubmit} className='select-none'>
                 {isReservationVisible && (
                     <div className="mb-20 border-t-2 border-gray-300 pt-10">
-                        <h1 className='font-bold text-3xl ml-20 mt-5'><ContactEmergencyOutlinedIcon fontSize='large' className='mr-3' />Sürücü Bilgileri</h1>
-                        <div className="flex space-x-4 mt-10 ml-20">
-                            <div className="flex flex-col">
+                        <h1 className='font-bold text-3xl ml-4 mt-5 flex items-center'>
+                            <ContactEmergencyOutlinedIcon fontSize='large' className='mr-3' /> Sürücü Bilgileri
+                        </h1>
+                        <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 mt-10 ml-4 sm:ml-20">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Ad</label>
                                 <input
                                     type="text"
@@ -145,13 +145,13 @@ function Detail() {
                                     value={formData.ad}
                                     onChange={handleChange}
                                     placeholder=' Adınızı giriniz'
-                                    className="h-10 w-80 mb-3 mr-7 border-2 border-black rounded-sm"
+                                    className="h-10 w-full sm:w-80 mb-3 mr-7 border-2 border-black rounded-sm"
                                     required
                                 />
                                 {errors.ad && <p className="text-red-500">{errors.ad}</p>}
                             </div>
 
-                            <div className="flex flex-col">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Soyad</label>
                                 <input
                                     type="text"
@@ -159,44 +159,44 @@ function Detail() {
                                     value={formData.soyad}
                                     onChange={handleChange}
                                     placeholder=' Soyadınızı giriniz'
-                                    className="h-10 w-80 border-2 border-black rounded-sm"
+                                    className="h-10 w-full sm:w-80 border-2 border-black rounded-sm"
                                     required
                                 />
                                 {errors.soyad && <p className="text-red-500">{errors.soyad}</p>}
                             </div>
                         </div>
 
-                        <div className="flex space-x-4 mt-4 ml-20">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 mt-4 ml-4 sm:ml-20">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Email</label>
                                 <input
                                     type="email"
                                     name="eposta"
                                     value={formData.eposta}
                                     onChange={handleChange}
-                                    placeholder=' info@example.gmail.com'
-                                    className="h-10 w-80 mb-3 mr-7 border-2 border-black rounded-sm"
+                                    placeholder=' info@example.com'
+                                    className="h-10 w-full sm:w-80 mb-3 mr-7 border-2 border-black rounded-sm"
                                     required
                                 />
                                 {errors.eposta && <p className="text-red-500">{errors.eposta}</p>}
                             </div>
 
-                            <div className="flex flex-col">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Doğum Tarihi</label>
                                 <input
                                     type="date"
                                     name="dogumTarihi"
                                     value={formData.dogumTarihi}
                                     onChange={handleChange}
-                                    className="h-10 w-80 mb-3 border-2 border-black rounded-sm"
+                                    className="h-10 w-full sm:w-80 mb-3 border-2 border-black rounded-sm"
                                     required
                                 />
                                 {errors.dogumTarihi && <p className="text-red-500">{errors.dogumTarihi}</p>}
                             </div>
                         </div>
 
-                        <div className="flex space-x-4 mt-4 ml-20">
-                            <div className="flex flex-col">
+                        <div className="flex flex-col sm:flex-row space-x-0 sm:space-x-4 mt-4 ml-4 sm:ml-20">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Telefon</label>
                                 <input
                                     type="text"
@@ -204,7 +204,7 @@ function Detail() {
                                     value={formData.telefon}
                                     onChange={handleChange}
                                     placeholder="Örnek: +90 544 123 01 02"
-                                    className="h-10 w-80 mb-3 mr-7 border-2 border-black rounded-sm"
+                                    className="h-10 w-full sm:w-80 mb-3 mr-7 border-2 border-black rounded-sm"
                                     required
                                     minLength={10}
                                     maxLength={11}
@@ -212,17 +212,17 @@ function Detail() {
                                 />
                             </div>
 
-                            <div className="flex flex-col">
+                            <div className="flex flex-col w-full sm:w-1/2">
                                 <label className="font-semibold">Açıklama</label>
                                 <input
                                     type="text"
                                     placeholder=' İsteğe bağlı'
-                                    className="h-10 w-80 mb-3 border-2 border-black rounded-sm"
+                                    className="h-10 w-full sm:w-80 mb-3 border-2 border-black rounded-sm"
                                 />
                             </div>
                         </div>
 
-                        <div className="flex items-center ml-20 mt-4">
+                        <div className="flex items-center ml-4 sm:ml-20 mt-4">
                             <label className="flex items-center space-x-2">
                                 <input className='size-4'
                                     type="checkbox"
@@ -235,7 +235,7 @@ function Detail() {
                             {errors.checkbox && <p className="text-red-500">{errors.checkbox}</p>}
                         </div>
 
-                        <div className='mt-16 ml-80'>
+                        <div className='mt-16 text-center'>
                             <input
                                 type="submit"
                                 value="Rezervasyonu Tamamla"
@@ -249,4 +249,4 @@ function Detail() {
     )
 }
 
-export default Detail
+export default Detail;
