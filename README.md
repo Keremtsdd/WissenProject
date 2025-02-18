@@ -1,5 +1,5 @@
 Site URL;
-tasdemirrentacar.runasp.net
+http://tasdemirrentacar.runasp.net
 
 Admin Paneli Bilgileri ;
 Username : WissenBesiktas
