@@ -45,17 +45,17 @@ function App() {
         <Layout>
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/detail/:name" element={<Detail />} />
-            <Route path="/favorite" element={<Favorite />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/rentalcondition" element={<RentalCondition />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/detail/:name' element={<Detail />} />
+            <Route path='/favorite' element={<Favorite />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/rentalcondition' element={<RentalCondition />} />
+            <Route path='/confirmation' element={<Confirmation />} />
+            <Route path='/adminlogin' element={<AdminLogin />} />
             <Route path="/admindashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
             <Route path="/admincaradd" element={<PrivateRoute><AdminCarAdd /></PrivateRoute>} />
             <Route path="/admincarremove" element={<PrivateRoute><AdminCarRemove /></PrivateRoute>} />
-            <Route path="*" element={<Error />} />
+            <Route path='*' element={<Error />} />
           </Routes>
         </Layout>
       </BrowserRouter>

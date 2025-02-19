@@ -234,7 +234,7 @@ function Detail() {
                                     checked={formData.checkbox}
                                     onChange={handleChange}
                                 />
-                                <span><a href="/rentalcondition" className='underline font-bold'>Kiralama Koşullarını</a> Okudum ve Kabul ediyorum.</span>
+                                <h1 onClick={() => navigate('/rentalcondition')} className='underline font-bold'>Kiralama Koşullarını</h1><span>Okudum ve Kabul Ediyorum.</span>
                             </label>
                             {errors.checkbox && <p className="text-red-500">{errors.checkbox}</p>}
                         </div>
