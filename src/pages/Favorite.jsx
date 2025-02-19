@@ -41,7 +41,7 @@ function Favorite() {
                 </div>
             )}
 
-            <div className="flex flex-wrap justify-center gap-10 p-8 pb-36 mt-16">
+            <div className="mt-1.5 sm:mt-16 flex flex-wrap justify-center gap-10 p-8 pb-36">
 
                 {favoriteArray.map((RentaCar) => (
 

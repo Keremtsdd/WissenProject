@@ -85,7 +85,7 @@ function Detail() {
     }
 
     return (
-        <div className='max-w-4xl mx-auto mt-20 border-t-2 border-gray-200 p-6 bg-white shadow-lg rounded-lg mb-32'>
+        <div className="max-w-4xl mx-auto border-t-2 border-gray-200 p-6 bg-white shadow-lg rounded-lg mt-0 mb-0 sm:mt-20 sm:mb-24">
             <div onClick={handleFavoriteToggle} style={{ cursor: 'pointer' }}>
                 {isFavorite ? (
                     <StarIcon fontSize='large' style={{ color: 'black' }} />
