@@ -226,18 +226,27 @@ function Detail() {
                             </div>
                         </div>
 
-                        <div className="flex items-center ml-4 sm:ml-20 mt-4">
-                            <label className="flex items-center space-x-2">
-                                <input className='size-4'
+                        <div className="flex items-center ml-1 sm:ml-20 mt-4">
+                            <label className="flex items-center gap-x-2">
+                                <input
+                                    className="w-4 h-4"
                                     type="checkbox"
                                     name="checkbox"
                                     checked={formData.checkbox}
                                     onChange={handleChange}
                                 />
-                                <h1 onClick={() => navigate('/rentalcondition')} className='underline font-bold'>Kiralama Koşullarını</h1><span>Okudum ve Kabul Ediyorum.</span>
+                                <h1
+                                    onClick={() => navigate('/rentalcondition')}
+                                    className="flex underline font-bold cursor-pointer whitespace-nowrap"
+                                >
+                                    Kiralama Koşullarını <span className="font-normal ml-1">Okudum ve Kabul Ediyorum.</span>
+                                </h1>
                             </label>
-                            {errors.checkbox && <p className="text-red-500">{errors.checkbox}</p>}
+                            {errors.checkbox && <p className="text-red-500 mt-1">{errors.checkbox}</p>}
                         </div>
+
+
+
 
                         <div className='mt-16 text-center'>
                             <input

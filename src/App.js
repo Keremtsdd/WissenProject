@@ -52,9 +52,9 @@ function App() {
             <Route path='/rentalcondition' element={<RentalCondition />} />
             <Route path='/confirmation' element={<Confirmation />} />
             <Route path='/adminlogin' element={<AdminLogin />} />
-            <Route path="/admindashboard" element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
-            <Route path="/admincaradd" element={<PrivateRoute><AdminCarAdd /></PrivateRoute>} />
-            <Route path="/admincarremove" element={<PrivateRoute><AdminCarRemove /></PrivateRoute>} />
+            <Route path='/admindashboard' element={<PrivateRoute><AdminDashboard /></PrivateRoute>} />
+            <Route path='/admincaradd' element={<PrivateRoute><AdminCarAdd /></PrivateRoute>} />
+            <Route path='/admincarremove' element={<PrivateRoute><AdminCarRemove /></PrivateRoute>} />
             <Route path='*' element={<Error />} />
           </Routes>
         </Layout>
