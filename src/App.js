@@ -16,6 +16,7 @@ import AdminDashboard from './AdminPanel/AdminDashboard';
 import AdminCarRemove from './AdminPanel/AdminCarRemove';
 import AdminCarAdd from './AdminPanel/AdminCarAdd';
 import PrivateRoute from './components/PrivateRoute';
+import ScrollToTop from './components/ScrollToTop';
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -42,6 +43,7 @@ function App() {
     <Provider store={reduxStore}>
       <BrowserRouter>
         <Layout>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/detail/:name" element={<Detail />} />

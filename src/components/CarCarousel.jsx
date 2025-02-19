@@ -27,7 +27,7 @@ function CarCarousel() {
         <div className="relative w-full max-w-4xl mx-auto mt-6 overflow-hidden rounded-lg shadow-lg select-none">
             <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                 {images.map((src, index) => (
-                    <img key={index} src={src} alt="Car" className="w-full h-96 object-cover flex-shrink-0" />
+                    <img key={index} src={src} alt="Car" className="w-full h-56 sm:h-80 md:h-96 object-cover flex-shrink-0" />
                 ))}
             </div>
 
