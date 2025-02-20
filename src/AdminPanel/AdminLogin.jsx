@@ -43,16 +43,16 @@ function AdminLogin() {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-300">
-            <div className="h-96 w-96 border-2 border-black p-6">
-                <h1 className="font-bold flex justify-center text-2xl mt-5">Admin Giriş</h1>
+        <div className="flex items-center justify-center min-h-screen bg-gray-300 px-4">
+            <div className="w-full max-w-sm border-2 border-black p-6 bg-white rounded-lg shadow-md mt-8 sm:mt-4">
+                <h1 className="font-bold text-center text-2xl mt-2">Admin Giriş</h1>
 
-                <div className="flex items-center mt-10">
-                    <AccountCircleOutlinedIcon fontSize="large" />
+                <div className="flex items-center mt-8">
+                    <AccountCircleOutlinedIcon fontSize="large" className="text-gray-700" />
                     <input
                         type="text"
                         placeholder="Username"
-                        className="bg-gray-200 text-black border-2 border-black w-64 p-2 ml-4 rounded-sm"
+                        className="bg-gray-200 text-black border-2 border-black w-full p-2 ml-4 rounded-sm focus:outline-none"
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         onKeyDown={handleKeyDown}
@@ -60,11 +60,11 @@ function AdminLogin() {
                 </div>
 
                 <div className="flex items-center mt-4">
-                    <LockOpenIcon fontSize="large" />
+                    <LockOpenIcon fontSize="large" className="text-gray-700" />
                     <input
                         type="password"
                         placeholder="Password"
-                        className="bg-gray-200 text-black border-2 border-black w-64 p-2 ml-4 rounded-sm"
+                        className="bg-gray-200 text-black border-2 border-black w-full p-2 ml-4 rounded-sm focus:outline-none"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         onKeyDown={handleKeyDown}
@@ -76,8 +76,8 @@ function AdminLogin() {
                 <button
                     onClick={handleLogin}
                     disabled={loading}
-                    className={`h-9 w-32 mt-7 ml-24 text-xl ${loading ? "bg-gray-500" : "bg-green-600 hover:bg-green-900"
-                        } duration-300 text-white rounded-sm`}
+                    className={`h-10 w-full mt-6 text-lg ${loading ? "bg-gray-500" : "bg-green-600 hover:bg-green-900"
+                        } duration-300 text-white rounded-md`}
                 >
                     {loading ? "Giriş Yapılıyor..." : "Giriş"}
                 </button>

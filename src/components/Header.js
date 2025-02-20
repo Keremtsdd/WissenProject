@@ -44,36 +44,35 @@ export default function Header() {
         setMobileMoreAnchorEl(event.currentTarget);
     };
 
+    const handleMenuItemClick = (path) => {
+        navigate(path);
+        handleMenuClose();
+    };
+
     const menuId = 'primary-search-account-menu';
     const renderMenu = (
         <Menu
             anchorEl={anchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             id={menuId}
             keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem onClick={() => navigate('/')}>
+            <MenuItem onClick={() => handleMenuItemClick('/')}>
                 <DirectionsCarIcon className='mr-2' /> Anasayfa
             </MenuItem>
-            <MenuItem onClick={() => navigate('/favorite')}>
+            <MenuItem onClick={() => handleMenuItemClick('/favorite')}>
                 <ShoppingCartCheckoutIcon className='mr-2' /> Favorilerim
             </MenuItem>
-            <MenuItem onClick={() => navigate('/about')}>
+            <MenuItem onClick={() => handleMenuItemClick('/about')}>
                 <InfoIcon className='mr-2' /> Hakkımızda
             </MenuItem>
-            <MenuItem onClick={() => navigate('/rentalcondition')}>
+            <MenuItem onClick={() => handleMenuItemClick('/rentalcondition')}>
                 <HvacIcon className='mr-2' /> Kiralama Koşulları
             </MenuItem>
-            <MenuItem onClick={() => navigate('/adminlogin')}>
+            <MenuItem onClick={() => handleMenuItemClick('/adminlogin')}>
                 <AccountBoxIcon className='mr-2' /> Admin Girişi*
             </MenuItem>
         </Menu>
@@ -83,63 +82,52 @@ export default function Header() {
     const renderMobileMenu = (
         <Menu
             anchorEl={mobileMoreAnchorEl}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
+            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
             id={mobileMenuId}
             keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
             open={isMobileMenuOpen}
             onClose={handleMobileMenuClose}
         >
-            <MenuItem>
-                <IconButton
-                    size='large'
-                    aria-label='show 5 new mails'
-                    color='inherit'
-                    onClick={() => navigate('/')}
-                >
+            <MenuItem onClick={() => handleMenuItemClick('/')}>
+                <IconButton size='large' color='inherit'>
                     <Badge>
                         <DirectionsCarIcon />
                     </Badge>
                 </IconButton>
-                <h1 onClick={() => navigate('/')}>Anasayfa</h1>
+                <h1>Anasayfa</h1>
             </MenuItem>
-            <MenuItem>
-                <IconButton size='large' color='inherit' onClick={() => navigate('/favorite')}>
+            <MenuItem onClick={() => handleMenuItemClick('/favorite')}>
+                <IconButton size='large' color='inherit'>
                     <Badge badgeContent={number} color='error'>
                         <ShoppingCartCheckoutIcon />
                     </Badge>
                 </IconButton>
-                <h1 onClick={() => navigate('/favorite')}>Favorilerim</h1>
+                <h1>Favorilerim</h1>
             </MenuItem>
-            <MenuItem>
-                <IconButton size='large' color='inherit' onClick={() => navigate('/about')}>
+            <MenuItem onClick={() => handleMenuItemClick('/about')}>
+                <IconButton size='large' color='inherit'>
                     <Badge>
                         <InfoIcon />
                     </Badge>
                 </IconButton>
-                <h1 onClick={() => navigate('/about')}>Hakkımızda</h1>
+                <h1>Hakkımızda</h1>
             </MenuItem>
-            <MenuItem>
-                <IconButton size='large' color='inherit' onClick={() => navigate('/rentalcondition')}>
+            <MenuItem onClick={() => handleMenuItemClick('/rentalcondition')}>
+                <IconButton size='large' color='inherit'>
                     <Badge>
                         <HvacIcon />
                     </Badge>
                 </IconButton>
-                <h1 onClick={() => navigate('/rentalcondition')}>Kiralama Koşulları</h1>
+                <h1>Kiralama Koşulları</h1>
             </MenuItem>
-            <MenuItem>
-                <IconButton size='large' color='inherit' onClick={() => navigate('/rentalcondition')}>
+            <MenuItem onClick={() => handleMenuItemClick('/adminlogin')}>
+                <IconButton size='large' color='inherit'>
                     <Badge>
                         <AccountBoxIcon />
                     </Badge>
                 </IconButton>
-                <h1 onClick={() => navigate('/adminlogin')}>Admin Girişi*</h1>
+                <h1>Admin Girişi*</h1>
             </MenuItem>
         </Menu>
     );
@@ -164,16 +152,10 @@ export default function Header() {
                         component='div'
                         sx={{ display: { xs: 'none', sm: 'block' } }}
                     >
-                        <h1
-                            onClick={() => navigate('/')}
-                            className='font-bold text-xl mt-1 select-none -mb-2 ml-10 cursor-pointer'
-                        >
+                        <h1 className='font-bold text-xl mt-1 select-none -mb-2 ml-10 cursor-pointer' onClick={() => navigate('/')}>
                             TAŞDEMİR RENT A CAR
                         </h1>
-                        <h4
-                            onClick={() => navigate('/')}
-                            className='font-light text-sm ml-24 mt-2 select-none'
-                        >
+                        <h4 className='font-light text-sm ml-24 mt-2 select-none' onClick={() => navigate('/')}>
                             Kolayca Kirala
                         </h4>
                     </Typography>
@@ -185,50 +167,18 @@ export default function Header() {
                     <Box sx={{ flexGrow: 1 }} />
 
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <div className='inline-flex mt-4 font-serif text-xl select-none'>
-                            <h1 onClick={() => navigate('/')} className='pr-8 hover:text-black'>
-                                Ana Sayfa
-                            </h1>
-                            <h1 onClick={() => navigate('/about')} className='pr-8 hover:text-black'>
-                                Hakkımızda
-                            </h1>
-                            <h1 onClick={() => navigate('/rentalcondition')} className='mr-24 hover:text-black'>
-                                Kiralama Koşulları
-                            </h1>
-                        </div>
-
-                        <IconButton
-                            size='large'
-                            aria-label='show 17 new notifications'
-                            color='inherit'
-                            onClick={() => navigate('/favorite')}
-                        >
+                        <IconButton size='large' color='inherit' onClick={() => navigate('/favorite')}>
                             <Badge badgeContent={number} color='error'>
                                 <ShoppingCartCheckoutIcon fontSize='large' />
                             </Badge>
                         </IconButton>
-                        <IconButton
-                            size='large'
-                            edge='end'
-                            aria-label='account of current user'
-                            aria-controls={menuId}
-                            aria-haspopup='true'
-                            onClick={handleProfileMenuOpen}
-                            color='inherit'
-                        >
+                        <IconButton size='large' edge='end' color='inherit' onClick={handleProfileMenuOpen}>
                             <FormatListBulletedIcon fontSize='large' />
                         </IconButton>
                     </Box>
 
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            size='large'
-                            aria-label='show more'
-                            aria-controls={mobileMenuId}
-                            aria-haspopup='true'
-                            onClick={handleMobileMenuOpen}
-                            color='inherit'
-                        >
+                        <IconButton size='large' color='inherit' onClick={handleMobileMenuOpen}>
                             <MoreIcon />
                         </IconButton>
                     </Box>
@@ -240,4 +190,3 @@ export default function Header() {
         </Box>
     );
 }
-

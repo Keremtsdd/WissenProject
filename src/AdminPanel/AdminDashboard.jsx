@@ -47,7 +47,35 @@ function AdminDashboard() {
                     </ul>
                 </div>
 
-                <div className="flex-1 p-6"> <div className="flex flex-wrap justify-start space-x-6 mt-10 ml-24"> <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6"> <h1 className="flex justify-center font-bold text-xl pt-10 text-white">Güncel Araç Sayısı</h1> <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full"> <h1 className="flex justify-center text-3xl font-bold pt-7">{totalCars}</h1> </div> </div> <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6"> <h1 className="flex justify-center font-bold text-xl pt-10 text-white">Manuel Vites Araç Sayısı</h1> <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full"> <h1 className="flex justify-center text-3xl font-bold pt-7">{manualCars}</h1> </div> </div> <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6"> <h1 className="flex justify-center font-bold text-xl pt-10 text-white">Otomatik Vites Araç Sayısı</h1> <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full"> <h1 className="flex justify-center text-3xl font-bold pt-7">{otoCars}</h1> </div> </div> </div> </div>
+                <div className="flex-1 p-6">
+                    <div className="flex flex-wrap justify-start space-x-6 mt-10 ml-24">
+                        <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6">
+                            <h1 className="flex justify-center font-bold text-xl pt-10 text-white">
+                                Güncel Araç Sayısı
+                            </h1>
+                            <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full">
+                                <h1 className="flex justify-center text-3xl font-bold pt-7">{totalCars}</h1>
+                            </div>
+                        </div>
+                        <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6">
+                            <h1 className="flex justify-center font-bold text-xl pt-10 text-white">
+                                Manuel Vites Araç Sayısı
+                            </h1>
+                            <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full">
+                                <h1 className="flex justify-center text-3xl font-bold pt-7">{manualCars}</h1>
+                            </div>
+                        </div>
+                        <div className="h-64 w-64 bg-blue-700 hover:bg-blue-900 rounded-lg mb-6">
+                            <h1 className="flex justify-center font-bold text-xl pt-10 text-white">
+                                Otomatik Vites Araç Sayısı
+                            </h1>
+                            <div className="h-24 w-24 mt-6 mx-auto bg-white rounded-full">
+                                <h1 className="flex justify-center text-3xl font-bold pt-7">{otoCars}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

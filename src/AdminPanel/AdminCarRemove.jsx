@@ -33,8 +33,8 @@ const AdminCarRemove = () => {
         <div className="flex flex-col h-screen">
             <AdminHeader />
             <div className="flex flex-1">
-                <div className="w-64 bg-blue-700 text-white p-4">
-                    <h2 className="text-xl mb-6 flex justify-center">Admin</h2>
+                <div className="w-full sm:w-64 bg-blue-700 text-white p-4">
+                    <h2 className="text-xl mb-6 text-center">Admin</h2>
                     <div className="h-0.5 border-2 border-t-gray-400 shadow-lg"></div>
                     <ul>
                         <li className="mb-4">
@@ -54,10 +54,24 @@ const AdminCarRemove = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="p-4 ml-20 mt-10">
-                    <h1 className="text-2xl font-bold mb-4 "> Araç Sil</h1>
-                    <input type="text" placeholder="Araç ID girin" value={carId} onChange={(e) => setCarId(e.target.value)} className="p-2  rounded mb-2 border-2 border-black" />
-                    <button onClick={handleDelete} className="bg-red-500 text-white px-4 py-2 ml-2 rounded hover:bg-red-900 duration-300 transition" > Sil </button>
+
+                <div className="flex-1 p-4 sm:ml-10 mt-10 sm:mt-20">
+                    <h1 className="text-2xl font-bold mb-4">Araç Sil</h1>
+                    <div className="flex flex-col sm:flex-row sm:items-center">
+                        <input
+                            type="text"
+                            placeholder="Araç ID girin"
+                            value={carId}
+                            onChange={(e) => setCarId(e.target.value)}
+                            className="p-2 rounded mb-2 sm:mb-0 sm:w-64 border-2 border-black"
+                        />
+                        <button
+                            onClick={handleDelete}
+                            className="bg-red-500 text-white px-4 py-2 ml-0 sm:ml-2 rounded hover:bg-red-900 duration-300 transition"
+                        >
+                            Sil
+                        </button>
+                    </div>
                     {message && <p className="mt-4 text-red-500">{message}</p>}
                 </div>
             </div>

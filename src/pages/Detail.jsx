@@ -227,13 +227,14 @@ function Detail() {
                         </div>
 
                         <div className="flex items-center ml-1 sm:ml-20 mt-4">
-                            <label className="flex items-center gap-x-2">
+                            <label className="flex items-center gap-x-1">
                                 <input
-                                    className="w-4 h-4"
+                                    className="w-4 h-4 -ml-6"
                                     type="checkbox"
                                     name="checkbox"
                                     checked={formData.checkbox}
                                     onChange={handleChange}
+
                                 />
                                 <h1
                                     onClick={() => navigate('/rentalcondition')}
